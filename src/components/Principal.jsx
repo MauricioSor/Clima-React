@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Principal = () => {
+const Principal = ({clima}) => {
     return (
-        <div>
-            
+        <div className='d-flex'>
+        <div className='container'>
+
+        </div>
+        <div className='container'>
+        <p></p>
+        </div>
         </div>
     );
 };
