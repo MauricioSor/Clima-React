@@ -5,14 +5,12 @@ import Principal from './components/Principal'
 import { useEffect, useState } from 'react'
 
 function App() {
-const [clima,setClima]= useState([]);
-useEffect(()=>{
-  consultarAPI();
-  },[]);
+const [clima,setClima]= useState({});
+
 const consultarAPI = async(e)=>{
   if(e&& e!=='Tucuman'){
     let apikey='1f998e9fb087014c08d45fe5301f583a'
-    const consultar = await fetch(`https://api.openweathermap.org/data/2.5/weather?country=Argentina&q=${e.target.value}&lang=sp&appid=${apikey}`);
+    const consultar = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&lang=sp&appid=${apikey}`);
     const respuesta = await consultar.json();
     setClima(respuesta);
     console.log(respuesta);
@@ -29,11 +27,14 @@ const consultarAPI = async(e)=>{
       throw(Error);
     }
   }
-
 }
-
+useEffect(()=>{
+  consultarAPI();
+  },[]);
   return (
     <>
+    <h1 className='my-4 text-center'>Estado del Clima</h1>
+    <hr />
     <Principal clima={clima}></Principal>
     <Footer></Footer>
     </>
