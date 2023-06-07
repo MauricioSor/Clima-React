@@ -19,7 +19,7 @@ const tomaDeDatos = (e)=>{
 const consultarAPI = async(ciudad)=>{
   if(ciudad&& ciudad!=='Tucuman'){
     let apikey='1f998e9fb087014c08d45fe5301f583a'
-    const consultar = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=sp&appid=${apikey}`);
+    const consultar = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&appid=${apikey}`);
     const respuesta = await consultar.json();
     setClima(respuesta);
     console.log(respuesta);
