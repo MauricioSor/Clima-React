@@ -3,7 +3,8 @@ import { Container } from 'react-bootstrap';
 import CieloNuboso from "../assets/377769.png"
 import lluvia from "../assets/fondo-natural-con-el-cielo-lluvioso-31994020.png"
 import sol from "../assets/a.png"
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 const Principal = ({ clima }) => {
     if (Object.keys(clima).length === 0) {
         return <p>Cargando...</p>;
@@ -50,6 +51,13 @@ const Principal = ({ clima }) => {
                         alt="Lluvia Moderada"
                     />
                 );
+                case 'nublado':
+                    return (
+                        <img
+                            src={lluvia} className='img-fluid'
+                            alt="Lluvia Moderada"
+                        />
+                    );
             default:
                 return null;
         }
@@ -57,9 +65,10 @@ const Principal = ({ clima }) => {
 
     return (
         <div>
-            <Container className="d-flex justify-content-center border my-3">
-                <Container className="text-center my-2">{cielo(clima.weather[0].description)}</Container>
-                <Container className="my-2">
+            <Container className="border my-3">
+                <Row xs={1} md={1} lg={2} >                
+                <Container className="container text-center my-2">{cielo(clima.weather[0].description)}</Container>
+                <Container className="my-2 text-start">
                     <h2>{clima.name}</h2>
                     <p>Cielo: <strong>{clima.weather[0].description}</strong></p>
                     <p>Temperatura: <strong>{temperatura}°</strong></p>
@@ -68,6 +77,7 @@ const Principal = ({ clima }) => {
                     <p>Humedad: <strong>{clima.main.humidity}%</strong></p>
                     <p>Viento: <strong>{clima.wind.speed} m/s</strong></p>
                 </Container>
+                </Row>
             </Container>
         </div>
     );

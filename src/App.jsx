@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Container, Button, Spinner } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Footer from './components/Footer';
+import Row from 'react-bootstrap/Row';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 import Principal from './components/Principal';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   const [clima, setClima] = useState({});
@@ -52,18 +54,22 @@ function App() {
     <>
       <h1 className='my-4 text-center'>Estado del Clima</h1>
       <hr />
-      <Container fluid className='d-flex justify-content-center'>
-        <h3 className='text-center me-2'>Ingresar nombre de ciudad</h3>
-        <Form className="d-flex text-center" onSubmit={tomaDeDatos}>
+      <Row xs={1} md={1} lg={3} className='d-flex justify-content-start align-items-center mx-2'>
+      <Container>
+      <h3 className='text-center'>Ingresar nombre de ciudad</h3>
+      </Container>
+      <Container className=''>
+        <Form className="d-flex" onSubmit={tomaDeDatos}>
           <Form.Control
             type="search"
             placeholder="Pj. Salta"
             className="me-2"
             aria-label="Search"
           />
-          <Button type="submit" variant="outline-success">Buscar</Button>
+          <Button type="submit" variant="outline-success" className='bg-info text-dark'><i className="bi bi-search"></i>Buscar</Button>
         </Form>
       </Container>
+      </Row>
       {mostrarSpinner ? (
         <div className="my-5 d-flex justify-content-center">
           <Spinner animation="border" variant="primary" />
