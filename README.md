@@ -1,4 +1,4 @@
-# Promesas asincronas con API -React- Practicas con React-Bootstrap (APIS)📚 
+# App clima -Promesas asincronas con API -React (APIS)📚 
 
 ## Own project . Rolling Code's homework to learn about React .
 
