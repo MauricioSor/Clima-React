@@ -1,4 +1,4 @@
-# App clima -Promesas asincronas con API -React (APIS)📚 
+# App clima con React -Promesas asincronas con API -React (APIS)📚 
 
 ## Own project . Rolling Code's homework to learn about React .
 
