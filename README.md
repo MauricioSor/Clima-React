@@ -12,6 +12,9 @@
 - CSS3
 - HTML
 
+## API Documentation
+- [Weather API](https://openweathermap.org/api)
+
 ## Please . If you like this project give me a star to know it 🌟🤩 
 ## Thanks!! 
 ## Author 🙋‍♂️ 
